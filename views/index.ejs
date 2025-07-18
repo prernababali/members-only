@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Members Only</title>
+</head>
+<body>
+  <h1>Welcome, <%= currentUser ? currentUser.first_name : "Guest" %>!</h1>
+
+  <% if (currentUser) { %>
+    <p>
+      <a href="/log-out">Log out</a> |
+      <% if (!currentUser.is_member) { %>
+        <a href="/join">Join Club</a> |
+      <% } %>
+      <a href="/message/new">Create Message</a>
+    </p>
+  <% } else { %>
+    <p><a href="/log-in">Log in</a> | <a href="/sign-up">Sign up</a></p>
+  <% } %>
+
+  <h2>Messages:</h2>
+
+  <% messages.forEach((msg) => { %>
+    <div>
+      <h3><%= msg.title %></h3>
+      <p><%= msg.text %></p>
+      <p>By <%= msg.first_name || "Unknown" %> on <%= msg.created_at.toDateString() %></p>
+
+      <% if (currentUser && currentUser.is_admin) { %>
+        <form action="/message/<%= msg.id %>?_method=DELETE" method="POST" style="display:inline;">
+          <button type="submit" onclick="return confirm('Are you sure you want to delete this message?')">Delete</button>
+        </form>
+      <% } %>
+    </div>
+    <hr />
+  <% }); %>
+</body>
+</html>
+
+
+

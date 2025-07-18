@@ -1,0 +1,25 @@
+<h2>Sign Up</h2>
+
+<form action="/sign-up" method="POST">
+  <label for="firstName">First Name:</label>
+  <input type="text" name="firstName" id="firstName" required>
+
+  <label for="lastName">Last Name:</label>
+  <input type="text" name="lastName" id="lastName" required>
+
+  <label for="username">Email (Username):</label>
+  <input type="email" name="username" id="username" required>
+
+  <label for="password">Password:</label>
+  <input type="password" name="password" id="password" required>
+
+  <label for="confirmPassword">Confirm Password:</label>
+  <input type="password" name="confirmPassword" id="confirmPassword" required>
+
+  <label for="isAdmin">Make admin?</label>
+  <input type="checkbox" name="isAdmin" id="isAdmin">
+
+  <button type="submit">Sign Up</button>
+</form>
+
+<p><a href="/log-in">Already have an account?</a></p>
