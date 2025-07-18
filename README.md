@@ -70,7 +70,9 @@ members-only/
 
 ##  How to Run Locally
 
-1. **Clone the repo**  
+1. **Clone the repo**
+
+   
    ```bash-->  git clone <your-repo-url>
                cd members-only
                Install dependencies
@@ -80,6 +82,8 @@ members-only/
 
 
 **SQL Queries for users and message table**
+
+
 CREATE TABLE users (
   id SERIAL PRIMARY KEY,
   first_name TEXT,
@@ -89,6 +93,7 @@ CREATE TABLE users (
   is_member BOOLEAN DEFAULT false,
   is_admin BOOLEAN DEFAULT false
 );
+
 
 CREATE TABLE messages (
   id SERIAL PRIMARY KEY,
@@ -101,40 +106,57 @@ CREATE TABLE messages (
 npm start
 Visit: http://localhost:3000
 
- 2. **Admin Test Account**
+
+2. **Admin Test Account**
+    
 To test admin delete functionality, insert a user like this in the DB:
 
-sql
-Copy
-Edit
-INSERT INTO users (first_name, last_name, username, password, is_member, is_admin)
+--> INSERT INTO users (first_name, last_name, username, password, is_member, is_admin)
+
 VALUES ('Admin', 'User', 'admin', '<hashed_password>', true, true);
+
 (Use bcrypt to hash your password, or register normally and update the DB manually.)
 
- 3. **Key Learnings**
-Handling method="POST" forms for DELETE with method-override
 
-Role-based conditional rendering in EJS
+3. **Key Learnings**
+    
+* Handling method="POST" forms for DELETE with method-override
+  
 
-Full auth flow using Passport
+* Role-based conditional rendering in EJS
+  
 
-Clean MVC structure for Express
+* Full auth flow using Passport
+  
 
-Flash messages for UX
+* Clean MVC structure for Express
+  
+
+* Flash messages for UX
+  
 
 4. **Future Improvements**
-Add editing messages
+   
+* Add editing messages
 
-Pagination or infinite scroll
 
-Password reset flow
+* Pagination or infinite scroll
 
-Admin dashboard
 
-🧠 Credits
+* Password reset flow
+* 
+
+* Admin dashboard
+
+
+**Credits**
+
 Built as part of a Node.js course project – completed after deep debugging and solving real-world issues like routing errors, method override misconfigurations, and view/controller separation.
 
-📸 Preview
+
+
+**Preview***
+
 Only members can post messages.
 Only admins can delete them.
 
