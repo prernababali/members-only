@@ -144,7 +144,7 @@ VALUES ('Admin', 'User', 'admin', '<hashed_password>', true, true);
 
 
 * Password reset flow
-* 
+  
 
 * Admin dashboard
 
@@ -155,7 +155,8 @@ Built as part of a Node.js course project – completed after deep debugging and
 
 
 
-**Preview***
+**Preview**
+
 
 Only members can post messages.
 Only admins can delete them.
